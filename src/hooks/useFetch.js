@@ -11,6 +11,7 @@ export const useFetch = (url) => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
+      setData(null);
 
       try {
         const response = await fetch(url);
@@ -18,6 +19,7 @@ export const useFetch = (url) => {
         const result = await response.json();
         setData(result);
       } catch (err) {
+        setData(null);
         setError(err.message);
         console.error("Error fetching:", err);
       } finally {

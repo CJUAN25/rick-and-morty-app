@@ -53,16 +53,34 @@
   }
 }
 
-.sin-resultados {
-  text-align: center;
-  color: #a0aec0;
-  font-size: 1.1rem;
-  grid-column: 1 / -1;
-  padding: 40px;
-}
-
 .contenedor-principal {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.mensaje-sin-resultados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  padding: 40px;
+}
+
+.mensaje-sin-resultados p {
+  color: #a0aec0;
+  font-size: 1.3rem;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.texto-error {
+  color: #ff006e !important;
+  font-size: 0.9rem !important;
+  margin-top: 15px !important;
+  font-style: italic;
 }

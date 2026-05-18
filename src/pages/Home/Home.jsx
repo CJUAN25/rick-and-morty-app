@@ -8,9 +8,11 @@ import { getCharactersUrl, getCharactersByNameUrl } from "../../config/config";
 function Home() {
   const [searchParams] = useSearchParams();
   const searchTerm = searchParams.get("search") || "";
-  
-  const baseUrl = searchTerm ? getCharactersByNameUrl(searchTerm) : getCharactersUrl();
-  const { data, loading } = useFetch(baseUrl);
+
+  const baseUrl = searchTerm
+    ? getCharactersByNameUrl(searchTerm)
+    : getCharactersUrl();
+  const { data, loading, error } = useFetch(baseUrl);
 
   const personajes = data?.results || [];
 
@@ -26,20 +28,35 @@ function Home() {
     );
   }
 
+  // Sin resultados
+  if (!data || error || personajes.length === 0) {
+    return (
+      <div className="contenedor-principal">
+        <h1 className="titulo-principal">
+          {searchTerm
+            ? `Resultados para: ${searchTerm}`
+            : "Catalogo de credenciales"}
+        </h1>
+        <div className="mensaje-sin-resultados">
+          <p>No se encontraron personajes en este universo...</p>
+          {error && <p className="texto-error">{error}</p>}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="contenedor-principal">
       <h1 className="titulo-principal">
-        {searchTerm ? `Resultados para: ${searchTerm}` : "Catalogo de credenciales"}
+        {searchTerm
+          ? `Resultados para: ${searchTerm}`
+          : "Catalogo de credenciales"}
       </h1>
 
       <div className="cuadricula-personajes">
-        {personajes.length > 0 ? (
-          personajes.map((personaje) => (
-            <CharacterCard key={personaje.id} personaje={personaje} />
-          ))
-        ) : (
-          <p className="sin-resultados">No se encontraron personajes</p>
-        )}
+        {personajes.map((personaje) => (
+          <CharacterCard key={personaje.id} personaje={personaje} />
+        ))}
       </div>
     </div>
   );
