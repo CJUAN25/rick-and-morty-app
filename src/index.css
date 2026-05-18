@@ -1,0 +1,42 @@
+/* Importar fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* Títulos y elementos clave */
+h1,
+h2,
+h3,
+.nav-btn,
+.spa-text {
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Fondo modo oscuro */
+body {
+  background: radial-gradient(
+    circle at 50% 0%,
+    #1a2744 0%,
+    #080b14 70%,
+    #05070a 100%
+  );
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Cuadrícula de personajes */
+.cuadricula-personajes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,43 @@
+.footer-sencillo {
+  background-color: #05070a;
+  border-top: 1px solid #1f2937;
+  padding: 25px 20px;
+  margin-top: 60px;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-contenido p {
+  color: #6b7280;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* El logo de GitHub */
+.github-link {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  color: #ffffff;
+  transform: scale(1.1); /* Se agranda un poquito al pasar el mouse */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Brillo blanco */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-contenido {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

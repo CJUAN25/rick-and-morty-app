@@ -1,0 +1,119 @@
+/* Usamos Grid de 3 columnas flexible para layout */
+.header-galactico {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 35px 40px;
+  background-color: #0b101e;
+  border-bottom: 1px solid #1f2937;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- ZONA 1: IDENTIDAD --- */
+.header-identidad {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Preparando el espacio para el logo */
+.header-logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.header-titulos h1 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.header-titulos span {
+  color: #00ffcc;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* --- ZONA CENTRAL: BUSCADOR --- */
+.header-search {
+  display: flex;
+  justify-content: right;
+  flex: 1;
+}
+
+@media (max-width: 1200px) {
+  .header-search {
+    flex: 1.2;
+  }
+}
+
+.nav-btn {
+  color: #a0aec0;
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  border: 1px solid #00ffcc;
+  color: #00ffcc;
+  background-color: rgba(0, 255, 204, 0.05);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+/* --- ZONA 3: ESTADO ONLINE --- */
+.header-estado {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ffcc;
+  font-size: 0.75rem;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 1px;
+}
+
+@keyframes titilar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* --- RESPONSIVE PARA CELULARES --- */
+@media (max-width: 900px) {
+  .header-galactico {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+  .header-identidad {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header-search {
+    width: 100%;
+  }
+  .header-nav {
+    justify-content: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,48 @@
+.contenedor-botones-filtro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+  /*fondo oscuro a la caja de los botones para agruparlos */
+  background-color: rgba(11, 16, 30, 0.6);
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botón de filtro secundario  */
+.btn-filtro {
+  background-color: transparent;
+  color: #6b7280;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.btn-filtro:hover {
+  color: #00ffcc;
+  background-color: rgba(0, 255, 204, 0.05);
+}
+
+/* El botón activo (El que está seleccionado) */
+.btn-activo {
+  background-color: rgba(0, 255, 204, 0.1);
+  color: #00ffcc;
+  border: none;
+  border-bottom: 2px solid #00ffcc;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+  transition: all 0.3s ease;
+}

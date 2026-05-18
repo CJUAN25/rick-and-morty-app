@@ -1,0 +1,170 @@
+/* --- LA TARJETA (CREDENCIAL HORIZONTAL) --- */
+.tarjeta-credencial {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(
+    145deg,
+    #111827,
+    #1f2937
+  ); /* Degradado gris espacial */
+  border: 1px solid #374151;
+  border-left: 4px solid #00ffcc;
+  border-radius: 12px;
+  padding: 15px;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tarjeta-credencial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 204, 0.2);
+}
+
+/* --- LA FOTO RECORTADA (MÁSCARA CIRCULAR) --- */
+.credencial-foto-contenedor {
+  position: relative; /* Para poder poner la luz de estado encima */
+  flex-shrink: 0; /* Evita que la foto se aplaste */
+}
+
+.credencial-foto {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #00ffcc;
+  object-fit: cover;
+}
+
+.luz-estado-tarjeta {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #111827;
+}
+
+.luz-tarjeta-viva {
+  background-color: #00ffcc;
+  box-shadow: 0 0 8px #00ffcc;
+  animation: pulso-verde 2.5s infinite ease-in-out;
+}
+
+.luz-tarjeta-muerta {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulso-rojo 2.5s infinite ease-in-out;
+}
+
+.luz-tarjeta-desconocida {
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulso-amarillo 2.5s infinite ease-in-out;
+}
+
+/* --- LA INFORMACIÓN --- */
+.credencial-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.credencial-nombre {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #f3f4f6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.credencial-datos p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 3px;
+}
+
+.credencial-datos span {
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-right: 5px;
+}
+
+/* --- ACCIONES Y ADORNOS --- */
+.credencial-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.btn-detalle {
+  background-color: transparent;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+  padding: 5px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.btn-detalle:hover {
+  background-color: #00ffcc;
+  color: #111827;
+}
+
+.codigo-barras {
+  color: #4b5563;
+  font-size: 1.2rem;
+  letter-spacing: -2px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+/* --- RESPONSIVE: En celulares se vuelven de 1 sola columna --- */
+@media (max-width: 600px) {
+  .tarjeta-credencial {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(145deg, #111827, #1f2937);
+    border: 1px solid #374151;
+    border-left: 4px solid #00ffcc;
+    border-radius: 12px;
+    padding: 15px;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    /* --- SIMETRÍA --- */
+    width: 100%;
+    height: 100%;
+  }
+  .credencial-acciones {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* --- PUNTOS DE ESTADO --- */
+.punto-verde,
+.punto-rojo {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.punto-verde {
+  background-color: #00ffcc;
+}
+.punto-rojo {
+  background-color: #ff3333;
+}
